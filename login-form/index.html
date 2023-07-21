@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Login/Signup Page</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+   <div id="container">
+      <div id="login-form">
+         <h2>Login</h2>
+         <input type="text" id="login-email" placeholder="Email">
+         <input type="password" id="login-password" placeholder="Password">
+         <button onclick="login()">Login</button>
+		 <p>Not Registered? <span class="anchor-text" onclick="toggle(0)">Click Here</span> to signup</p> 
+      </div>
+      <div id="signup-form">
+         <h2>Signup</h2>
+         <input type="text" id="signup-name" placeholder="Name">
+         <input type="text" id="signup-email" placeholder="Email">
+         <input type="password" id="signup-password" placeholder="Password">
+         <button onclick="signup()">Signup</button>
+		 <p>Have an account? <span class="anchor-text" onclick="toggle(1)">Click Here</span> to login</p>
+      </div>
+   </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
