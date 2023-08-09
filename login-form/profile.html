@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="container">
+    <h1>User Profile</h1>
+    <img class="profile-image" src="profile-image.jpg" alt="Profile Image">
+    <div class="profile-info">
+      <div>
+        <span>Name:</span>
+        <input type="text" id="nameInput" value="John Doe" disabled>
+      </div>
+      <div>
+        <span>Email:</span>
+        <input type="text" id="emailInput" value="johndoe@example.com" disabled>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="editButton">Edit</button>
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>  
+    </div>  
+  </div>
+
+  <script>
+    const editButton = document.getElementById('editButton');
+    const saveButton = document.getElementById('saveButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+
+    editButton.addEventListener('click', () => {
+      nameInput.disabled = false;
+      emailInput.disabled = false;
+      
+      editButton.style.display = 'none';
+      saveButton.style.display = 'inline-block';
+      cancelButton.style.display = 'inline-block';
+    });
+
+    cancelButton.addEventListener('click', () => {
+      nameInput.disabled = true;
+      emailInput.disabled = true;
+
+      editButton.style.display = 'inline-block';
+      saveButton.style.display = 'none';
+      cancelButton.style.display = 'none';
+
+      // Reset input values
+      nameInput.value = 'John Doe';
+      emailInput.value = 'johndoe@example.com';
+    });
+
+    saveButton.addEventListener('click', () => {
+      nameInput.disabled = true;
+      emailInput.disabled = true;
+
+      editButton.style.display = 'inline-block';
+	  saveButton.style.display = 'none';
+      cancelButton.style.display = 'none';
+	  });
+	</script>
+	</body>
+</html>

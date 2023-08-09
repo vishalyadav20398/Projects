@@ -1,28 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <title>Login/Signup Page</title>
-   <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyanshala</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div id="container">
-      <div id="login-form">
-         <h2>Login</h2>
-         <input type="text" id="login-email" placeholder="Email">
-         <input type="password" id="login-password" placeholder="Password">
-         <button onclick="login()">Login</button>
-		 <p>Not Registered? <span class="anchor-text" onclick="toggle(0)">Click Here</span> to signup</p> 
-      </div>
-      <div id="signup-form">
-         <h2>Signup</h2>
-         <input type="text" id="signup-name" placeholder="Name">
-         <input type="text" id="signup-email" placeholder="Email">
-         <input type="password" id="signup-password" placeholder="Password">
-         <button onclick="signup()">Signup</button>
-		 <p>Have an account? <span class="anchor-text" onclick="toggle(1)">Click Here</span> to login</p>
-      </div>
-   </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="login.html">Login</a></li> <!-- Link to login page -->
+      </ul>
+    </nav>
+  </header>
 
-   <script src="script.js"></script>
+<div class="main-content">
+  <!-- Content of the homepage -->
+  <section id="home">
+    <h1>Welcome to the Gyanshala!</h1>
+    <!-- Add your portfolio content here -->
+    <div class="main-image-container">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400&q=80" alt="main-image">
+    </div>
+  </section>
+  <section id="courses">
+  <h2>Courses </h2>
+  <div class="main-container">
+	<div class="card">
+	  <img src="https://images.unsplash.com/photo-1611784601826-d17011218c7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200%20&h=300&q=80" alt="physics">
+	  <div class="container">
+		<h4><b>Physics</b></h4> 
+		<p>By Vishal Sir</p> 
+	  </div>
+	</div>
+	<div class="card">
+	  <img src="https://images.unsplash.com/photo-1554475900-0a0350e3fc7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=300&q=80" alt="chemistry">
+	  <div class="container">
+		<h4><b>Chemistry</b></h4> 
+		<p>By Shani Sir</p> 
+	  </div>
+	</div>
+	<div class="card">
+	  <img src="https://images.unsplash.com/photo-1548690596-f1722c190938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=300&q=80" alt="maths">
+	  <div class="container">
+		<h4><b>Mathematics</b></h4> 
+		<p>By Bheem Sir</p> 
+	  </div>
+	</div>
+	<div class="card">
+	  <img src="https://images.unsplash.com/photo-1543109740-4bdb38fda756?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=300&q=80" alt="english">
+	  <div class="container">
+		<h4><b>English</b></h4> 
+		<p>By Muskan Miss</p> 
+	  </div>
+	</div>
+	<div class="card">
+	  <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=300&q=80" alt="biology">
+	  <div class="container">
+		<h4><b>Biology</b></h4> 
+		<p>By Mamta Miss</p> 
+	  </div>
+	</div>
+	
+</div>
+  </section>
+  
+  <section id="about-us">
+  <h2>About Us</h2>
+
+	Welcome to our educational coaching services! We are dedicated to helping students achieve their full potential and excel academically. 
+At Gyanshala, we understand that every student is unique and has different learning needs. Our team of experienced and highly qualified educational coaches are here to provide personalized guidance and support to help students overcome challenges, develop effective study skills, and reach their academic goals.
+
+Our coaching approach is based on a deep understanding of the education system and the specific requirements of each grade level. We work closely with students to identify their strengths, weaknesses, and areas for improvement. Through one-on-one sessions, we create customized learning plans tailored to meet the individual needs of each student.
+
+Our educational coaches are not just tutors; they are mentors who inspire and motivate students to strive for excellence. They provide guidance on time management, organization skills, goal setting, and effective study techniques. Our coaches also help students build confidence in their abilities, develop critical thinking skills, and enhance problem-solving abilities.
+
+We believe that education is not just about memorizing facts but about fostering a love for learning. Our coaches go beyond the curriculum by encouraging curiosity, creativity, and independent thinking. We aim to instill a lifelong passion for knowledge in our students.
+
+We also understand that parents play a crucial role in their child's education journey. That's why we maintain open lines of communication with parents throughout the coaching process. We provide regular progress updates, discuss areas of improvement, and offer strategies for continued growth at home.
+
+Whether your child needs assistance with homework assignments or wants to excel in exams or college entrance tests, our educational coaching services can make a significant difference in their academic performance. We are committed to helping students become confident learners who can navigate any academic challenge they encounter.
+
+Thank you for considering [Company Name] as your partner in your child's educational journey. We look forward to working with you and helping your child unlock their full potential!
+  </section>
+  
+  <section id="contact">
+  <h2>Contact Us</h2>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">India</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+  
+  </section>
+</div>
+  <!-- Footer section -->
+  <footer>
+    &copy; 2023 Gyanshala. All rights reserved.
+  </footer>
+
 </body>
 </html>
