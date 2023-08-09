@@ -1,0 +1,67 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+.container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+h1 {
+text-align: center;
+}
+
+.profile-image {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+}
+
+.profile-info {
+display: flex;
+justify-content: space-between;
+}
+
+.profile-info div {
+flex-basis: calc(50% - 10px);
+}
+
+.profile-info div span {
+font-weight: bold;
+}
+
+.button-container {
+text-align:center; 
+margin-top:20px; 
+display:flex; 
+justify-content:center; 
+align-items:center
+}
+
+button { 
+padding:.5em; 
+background-color:#4CAF50; 
+color:white; 
+border:none; 
+cursor:pointer
+}
+
+button:hover { background-color:#45a049 }
+
+button:focus { outline:none }
+
+button[disabled] { background-color:#cccccc; cursor:not-allowed }
+
+#editButton { margin-right:.5em }
+
+#saveButton, #cancelButton { display:none }  
+
+input[type="text"] { width:auto }  
+
+input[type="text"]:disabled { background-color:#f2f2f2 }
