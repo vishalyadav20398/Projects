@@ -4,19 +4,19 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
-const secretKey = "Vishal_Yadav";
+const configs = require('./configs');
 
 exports.auth = async function (req, res, next) {
     try {
         var token = req.cookies['auth_token'];
         if (token) {
-            var user =  userjwt.verify(token, secretKey);
+            var user =  jwt.verify(token, configs.secretKey);
             if (user) {
                 req.user = user;
                 res.locals.user = user;
                 return next();
             } else {
-                res.redirect('/user/login');
+                res.redirect(configs.hostUrl + 'user/login');
             }
         } else {
             throw "token is missing";
@@ -25,4 +25,10 @@ exports.auth = async function (req, res, next) {
         console.log(e);
         res.redirect('/user/login');
     }
+    return next();
+}
+
+exports.common = function (req, res, next) {
+    res.locals.hostUrl = configs.hostUrl;
+    next();
 }

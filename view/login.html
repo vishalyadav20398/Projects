@@ -2,30 +2,30 @@
 <html>
 <head>
    <title>Login/Signup Page</title>
-   <link rel="stylesheet" type="text/css" href="css/login.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/login.css">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 	<header>
 		<nav>
 		  <ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="#">Courses</a></li>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/#courses">Courses</a></li>
+			<li><a href="/#about-us">About Us</a></li>
+			<li><a href="/#contact">Contact</a></li>
 			<!-- Add a link to the registration page if needed -->
 		  </ul>
 		</nav>
 	</header>
    <div id="container">
-      <div id="login-form">
+      <div id="login-form" data-url="<%= hostUrl %>user/login">
          <h2>Login</h2>
          <input type="text" id="login-email" placeholder="Email">
          <input type="password" id="login-password" placeholder="Password">
          <button onclick="login()">Login</button>
 		 <p>Not Registered? <span class="anchor-text" onclick="toggle(0)">Click Here</span> to signup</p> 
       </div>
-      <div id="signup-form">
+      <div id="signup-form" data-url="<%= hostUrl %>user/signup">
          <h2>Signup</h2>
          <input type="text" id="signup-name" placeholder="Name">
          <input type="text" id="signup-email" placeholder="Email">
@@ -35,7 +35,7 @@
       </div>
    </div>
 
-   <script src="script.js"></script>
+   <script src="/js/login.js"></script>
    <footer>
       &copy; 2023 Gyanshala. All rights reserved.
     </footer>

@@ -4,11 +4,19 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
-const secretKey = "Vishal_Yadav";
+const secretKey = require('./configs').secretKey;
 const {auth} = require('./middleware');
 
+server.get('', auth, function (req, res) {
+  res.render("profile");
+});
+
+server.get('/login', function (req, res) {
+  res.render('login');
+});
+
 server.post(
-  'signup',
+  '/signup',
   [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
@@ -22,7 +30,6 @@ server.post(
 
     try  {
         const { name, email, password } = req.body;
-
         // Check if user already exists
         let user = await User.findOne({ email });
         if (user) {
@@ -70,7 +77,7 @@ server.post(
 
 
   server.post(
-    'login',
+    '/login',
     [
       check('email', 'Please include a valid email').isEmail(),
       check('password', 'Password is required').exists(),
@@ -119,9 +126,6 @@ server.post(
     }
   );
 
-  server.get('profile', auth, function (req, res) {
-    res.render('profile');
-  });
 
   module.exports = server;
   

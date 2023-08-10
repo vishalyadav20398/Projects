@@ -4,10 +4,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
-const secretKey = "Vishal_Yadav";
+const secretKey = require('./configs').secretKey;
 
 server.get('', function (req, res) {
-    res.render('homepage');
+    res.render('index');
 });
 
 module.exports = server;
