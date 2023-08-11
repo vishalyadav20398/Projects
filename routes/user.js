@@ -121,7 +121,6 @@ server.post(
           { expiresIn: 3600 }, // Token expires in 1 hour
           (err, token) => {
             if (err) throw err;
-            console.log('code worked');
             res.cookie("auth_token", token);
             res.json({ 
               profileUrl: hostUrl + 'user'
