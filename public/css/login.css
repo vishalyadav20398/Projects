@@ -16,6 +16,10 @@
 	display: none;
 }
 
+.signup-msg, .login-msg {
+   color: red;
+}
+
 .anchor-text {
 	color: blue;
 	cursor: pointer;

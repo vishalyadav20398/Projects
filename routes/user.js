@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const secretKey = require('./configs').secretKey;
+const hostUrl = require('./configs').hostUrl;
 const {auth} = require('./middleware');
 
 server.get('', auth, function (req, res) {
@@ -12,7 +13,11 @@ server.get('', auth, function (req, res) {
 });
 
 server.get('/login', function (req, res) {
-  res.render('login');
+  if (req.cookies['auth_token']) {
+    res.redirect(hostUrl + 'user');
+  } else {
+    res.render('login');
+  }
 });
 
 server.post(
@@ -53,7 +58,7 @@ server.post(
         const payload = {
           user: {
             name: user.name,
-            id: user.id,
+            email: user.email,
           },
         };
 
@@ -65,7 +70,9 @@ server.post(
           (err, token) => {
             if (err) throw err;
             res.cookie("auth_token", token);
-            res.json({ token });
+            res.json({
+              profileUrl: hostUrl + 'user'
+            });
           }
         );
       } catch (err) {
@@ -89,7 +96,6 @@ server.post(
       }
 
       const { email, password } = req.body;
-
       try {
         let user = await User.findOne({ email });
         if (!user) {
@@ -104,7 +110,7 @@ server.post(
         const payload = {
           user: {
             name: user.name,
-            id: user.id,
+            email: user.email,
           },
         };
 
@@ -115,10 +121,13 @@ server.post(
           { expiresIn: 3600 }, // Token expires in 1 hour
           (err, token) => {
             if (err) throw err;
+            console.log('code worked');
             res.cookie("auth_token", token);
-            res.json({ token });
+            res.json({ 
+              profileUrl: hostUrl + 'user'
+             });
           }
-        );
+          );
       } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
@@ -126,6 +135,9 @@ server.post(
     }
   );
 
-
+  server.get('/logout', function (req, res) {
+    res.clearCookie('auth_token');
+    res.redirect(hostUrl);
+  })
   module.exports = server;
   

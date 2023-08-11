@@ -3,7 +3,8 @@ function login() {
    const email = document.getElementById('login-email').value;
    const password = document.getElementById('login-password').value;
    const loginForm = document.getElementById('login-form');
-   
+   const loginMsg = document.getElementsByClassName('login-msg')[0];
+
    let xhr = new XMLHttpRequest();
    let url = loginForm.attributes['data-url'].nodeValue;
    let data = {
@@ -14,7 +15,8 @@ function login() {
    xhr.setRequestHeader("Content-Type", "application/json");
    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-         console.log(this.responseText);
+         var response = JSON.parse(this.responseText);
+         window.location.href = response.profileUrl;
       }
    }
    xhr.send(JSON.stringify(data));
@@ -26,6 +28,7 @@ function signup() {
    const email = document.getElementById('signup-email').value;
    const password = document.getElementById('signup-password').value;
    const signupForm = document.getElementById('signup-form');
+   const signupMsg = document.getElementsByClassName('signup-msg')[0];
    let xhr = new XMLHttpRequest();
    let url = signupForm.attributes['data-url'].nodeValue;
    let data = {
@@ -37,7 +40,9 @@ function signup() {
    xhr.setRequestHeader("Content-Type", "application/json");
    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-         console.log(this.responseText);
+         signupMsg.innerHTML = "Signed Up Successfully!"
+         var response = JSON.parse(this.responseText);
+         window.location.href = response.profileUrl;
       }
    }
    xhr.send(JSON.stringify(data));

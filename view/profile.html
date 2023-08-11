@@ -3,19 +3,31 @@
 <head>
   <title>User Profile</title>
   <link rel="stylesheet" href="/css/profile.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
+  <header>
+		<nav>
+		  <ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/#courses">Courses</a></li>
+			<li><a href="/#about-us">About Us</a></li>
+			<li><a href="/#contact">Contact</a></li>
+			<li><a href="/user/logout">Logout</a></li>
+		  </ul>
+		</nav>
+	</header>
   <div class="container">
     <h1>User Profile</h1>
     <!-- <img class="profile-image" src="profile-image.jpg" alt="Profile Image"> -->
     <div class="profile-info">
       <div>
         <span>Name:</span>
-        <input type="text" id="nameInput" value="John Doe" disabled>
+        <input type="text" id="nameInput" value="<%= user.name %>" disabled>
       </div>
       <div>
         <span>Email:</span>
-        <input type="text" id="emailInput" value="johndoe@example.com" disabled>
+        <input type="text" id="emailInput" value="<%= user.email %>" disabled>
       </div>
     </div>
 
@@ -64,5 +76,8 @@
       cancelButton.style.display = 'none';
 	  });
 	</script>
+  <footer>
+    &copy; 2023 Gyanshala. All rights reserved.
+  </footer>
 	</body>
 </html>

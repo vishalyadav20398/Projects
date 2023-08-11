@@ -10,13 +10,20 @@ exports.auth = async function (req, res, next) {
     try {
         var token = req.cookies['auth_token'];
         if (token) {
-            var user =  jwt.verify(token, configs.secretKey);
-            if (user) {
-                req.user = user;
-                res.locals.user = user;
-                return next();
-            } else {
+            const decode = JSON.parse(atob(token.split('.')[1]));
+            if (decode.exp * 1000 < new Date().getTime()) {
+                console.log('token expired');
+                res.clearCookie('auth_token');
                 res.redirect(configs.hostUrl + 'user/login');
+            } else {
+                var decodedToken =  jwt.verify(token, configs.secretKey);
+                if (decodedToken) {
+                    req.user = decodedToken.user;
+                    res.locals.user = decodedToken.user;
+                    return next();
+                } else {
+                    res.redirect(configs.hostUrl + 'user/login');
+                }
             }
         } else {
             throw "token is missing";
