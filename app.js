@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://daidabox:daidabox@cluster0.ktvul.mongodb.net/VishalPractice?retryWrites=true&w=majority', {
+mongoose.connect('Use you mongodb connection url', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
